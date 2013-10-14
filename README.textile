@@ -1,0 +1,14 @@
+h3. Modelo de tese/dissertação IFUSP
+
+Este é um modelo de tese/dissertação para trabalhos de mestrado e doutorado apresentados no Instituto de Física da Universidade de São Paulo (IFUSP). Ele é baseado no bundle Koma-Script.
+
+h3. Arquivos
+
+* .pdf - Documento final de exemplo
+* .tcp - Arquivo de projeto (comece por aqui se você usa o TeXnicCenter)
+* .tex - O arquivo principal (comece por aqui se você NÃO usa o TeXnicCenter)
+* .tps - Arquivo interno do TeXnicCenter (ignore-o)
+
+h3. Licença
+
+O detentor do direito autoral deste trabalho, Ivan Ramos Pagnossin (twitter: @irpagnossin), disponibiliza-o para uso segundo a licença "Creative Commons Attribution 3.0 Unported":http://creativecommons.org/licenses/by/3.0/deed.en_US.

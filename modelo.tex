@@ -1,0 +1,135 @@
+%--------------------------------------------------------------------------------------
+% Modelo de dissertação ou tese para o Instituto de Física da Universidade de São Paulo
+% Autor: I. R. Pagnossin (irpagnossin at usp.br)
+%--------------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	10pt,
+	openany,
+	oneside
+	]{scrbook} % Classe do conjunto KOMA-Script
+
+	\usepackage[utf8]{inputenc} % Codificação de entrada: UTF-8
+	\usepackage[T1]{fontenc} % Codificação de saída: T1
+	\usepackage{ae} % Fontes Computer Modern Roman vetoriais
+	%\usepackage{mathptm} % Outra fonte que não as Computer Modern
+	\usepackage[brazil]{babel} % Padrões de separação silábica e traduções do português
+	\usepackage[colorlinks=true,linkcolor=red!50!black]{hyperref} % Hiper-texto (LaTeX -> PDF)
+	\usepackage{xcolor}	% Cores
+	\usepackage{makeidx} % Índice remissivo
+	\usepackage{graphicx} % Inserção de figuras EPS, PDF, JPG ou PNG
+	\usepackage{psfrag}	% Substituição de texto em figuras EPS
+	\usepackage{indentfirst} % Endentação do primeiro parágrafo de cada seção
+	\usepackage[squaren,binary]{SIunits} % Sistema internacional de unidades
+	\usepackage[format=plain,margin=\parindent,font=small,labelfont=bf]{caption} % Legendas personalizadas
+	\usepackage{subfigure} % Sub-figuras, e.g., fig.1(a), fig.3(c)
+	\usepackage{quotchap} % Melhora o visual dos capítulos
+	\usepackage{amsmath} % AMS-LaTeX
+	\usepackage{icomma}	% Define a vírgula como separador de decimal
+	\usepackage{colortbl}	% Cores em tabelas
+	\usepackage[square,numbers]{natbib} % Citações personalizadas
+	\usepackage{microtype} % Melhora a disposição das fontes
+	\usepackage{tikz} % Utilizado para construir a capa
+	\usepackage{booktabs} % Melhora a aparência de tabelas
+	
+	
+	% Este pacote é utilizado para preencher as páginas deste modelo.
+	% Substitua todas as ocorrências do comando \lipsum pelo seu texto.
+	\usepackage{lipsum}
+
+	% Espaço entre-linhas: 50% maior que o normal (p/ revisão).
+	%\usepackage{setspace} % Revisão: veja o comando \setspace abaixo
+	%\setstretch{1.5}
+
+	% Cabeçalhos e rodapés personalizados
+	\usepackage[ilines]{scrpage2}	
+	\pagestyle{scrheadings}
+	\chead{}
+	\ohead{\headmark}	
+	
+	% Define onde procurar as figuras
+	\graphicspath{{./arquivos/figuras/cap-introducao/}{./arquivos/figuras/cap-metodos/}}
+
+	% Lista de exeções aos padrões de separação silábica.
+	\hyphenation{}
+
+	% Macros úteis.
+	\newcommand{\cs}[1]{\texttt{\textbackslash\textcolor{blue!50!black}{#1}}} % Nome de comandos
+	\newcommand{\pkg}[1]{\textsl{\textcolor{green!50!black}{#1}}} % Nome de pacotes
+	\newcommand{\ctr}[1]{\textsf{\textcolor{orange!50!black}{#1}}} % Nome de contadores
+	
+	\newcommand\vetor[1]{\ensuremath{\boldsymbol{#1}}}
+	\newcommand\foreign[1]{\textsl{#1}}	% Palavras estrangeiras	
+	\newenvironment{dedicatoria}{\vspace*{\fill}\begin{flushright}}{\end{flushright}\pagebreak} % Dedicarória
+
+	% Função sen (ao invés de sin, em inglês)
+	\DeclareMathOperator{\sen}{sen}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+	%--------------------
+	\frontmatter
+
+	% Capa e ficha-catalográfica
+	\input{./arquivos/capa-e-ficha-catalografica}
+
+	% Dedicatória
+	\setcounter{page}{0}
+	\newpage
+	\input{./arquivos/dedicatoria}
+
+	% Agradecimentos
+	\newpage
+	\input{./arquivos/agradecimentos}
+
+	% Resumo e abstract
+	\newpage
+	\addcontentsline{toc}{chapter}{Resumo/\foreign{Abstract}}
+	\input{./arquivos/resumo}
+	\input{./arquivos/abstract}
+
+	% Sumário
+	\newpage
+	\tableofcontents
+
+	% Lista de figuras
+	\newpage
+	\addcontentsline{toc}{chapter}{\listfigurename}
+	\setcounter{lofdepth}{2}
+	\listoffigures
+	
+	% Lista de tabelas
+	\newpage
+	\addcontentsline{toc}{chapter}{\listtablename}
+	\listoftables
+
+	%--------------------
+	\mainmatter
+	\setheadsepline{0.2pt}
+
+	% Capítulo: introdução
+	\chapter{Introdução}
+	\label{cap:introducao}
+	\input{./arquivos/cap-introducao}
+
+	% Capítulo: conceitos e métodos
+	\chapter{Conceitos e métodos}
+	\label{cap:metodos}
+	\input{./arquivos/cap-metodos}
+
+	%--------------------
+	\appendix
+
+	\chapter{Lista de símbolos}
+	\label{ap:simbolos}
+	\input{./arquivos/apendice}
+
+	% Bibliografia
+	\newpage
+	\addcontentsline{toc}{chapter}{\bibname}
+	\bibliographystyle{./arquivos/Science}
+	\bibliography{./arquivos/referencias}
+
+\end{document}
+%-------------------------------------------------------------------------------

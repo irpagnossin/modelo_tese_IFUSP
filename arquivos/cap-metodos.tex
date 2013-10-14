@@ -1,0 +1,42 @@
+\lipsum[1]
+
+Citando a figura do capítulo anterior: fig.~\ref{fig:if}
+
+\section{Uma seção qualquer}
+
+\lipsum[2-5]
+
+	\begin{table}
+		\centering
+		\setlength{\belowcaptionskip}{0.5\baselineskip}
+		\caption[Legenda curta]{tabelas são trabalhosas de se construir no \LaTeX, mas existem algumas ferramentas que podem ajudar. Por exemplo, o LaTable lhe permite criar tabelas visualmente e salvá-las no formato do \LaTeX. Além dele, alguns IDE (\foreign{Integrated Development Environment}) trazem consigo um \foreign{software} próprio para isso (o Kile é um exemplo). Finalmente, é possível baixar e instalar algumas macros para Excel e OpenOffice que convertem tabelas deles para o \LaTeX.}
+		\label{tab:tabela}
+		
+		\begin{tabular}{ccc}
+			\toprule
+			Camadas	&	Espessuras (\nano\metre) & Observações\\
+			\midrule
+			GaAs & \multicolumn{2}{c}{Substrato semi-isolante (001)}\\
+			\rowcolor{gray!20}GaAs & 50 & \foreign{Buffer} \\
+			$[(\text{AlAs})_5(\text{GaAs})_{10}]\times10$	&	84 &	Super-rede (SR)	\\
+			\rowcolor{gray!20}GaAs & 20 & \foreign{Buffer} \\
+			\color{blue} GaAs:Si & $\sim\unit{1}{MC}$ & 	
+				$n_\text{Si}=\unit{4}{\times\terad\centi\rpsquare\metre}$ \\ 
+			\rowcolor{gray!20}\color{blue} GaAs & 30 & Barreira anterior\\ 
+			\color{blue}$\text{In}_y\text{Ga}_{1-y}\text{As}$ & 10 & QW ($y = 16,53\%$) \\ 
+			\rowcolor{gray!20}\color{blue} GaAs & 7 & Barreira posterior \\
+			\color{blue} GaAs & 170 & \foreign{Buffer} \\ 
+			\rowcolor{gray!20}GaAs:Si & 10 & $\unit{3,0\times10^{17}}{\centi\rpcubic\metre}$ \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+\section{Mais outra seção}
+
+\lipsum[6]
+
+\begin{equation}\label{eq:pitagoras}
+\sen^2\phi + \cos^2\phi = 1.
+\end{equation}
+
+\lipsum[7-9]

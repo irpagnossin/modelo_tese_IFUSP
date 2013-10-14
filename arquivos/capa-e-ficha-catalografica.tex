@@ -1,0 +1,110 @@
+\newlength{\indentamount}
+\setlength{\indentamount}{\parindent}
+
+\newcommand{\nome}{de tal, Fulano}
+\newcommand{\titulo}{Este é o título desta dissertação de mestrado ou tese de doutorado}
+\newcommand{\cidade}{São Paulo}
+\newcommand{\data}{\the\year}
+\newcommand{\tipo}{Tese (Doutorado)}
+%\newcommand{\tipo}{Dissertação (Mestrado)}
+\newcommand{\universidade}{Universidade de São Paulo}
+\newcommand{\instituto}{Instituto de Física}
+\newcommand{\departamento}{O nome do departamento}
+\newcommand{\orientador}{Prof. Dr. Beltrano Sicrano de tal}
+\newcommand{\area}{Física}
+\newcommand{\unitermos}{1. Fotodetectores; 2. Efeito Hall-quântico; 3. Física da Matéria Condensada}
+\newcommand{\sbi}{USP/IF/SBI-016/2009}
+
+%-------------------------------------------------------------------------------
+% CAPA
+%-------------------------------------------------------------------------------
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture,overlay]
+	
+		% Universidade e instituto (cabeçalho)
+		\node [yshift=-2cm] at (current page.north) {%
+			\begin{minipage}{\textwidth}
+				\centering
+				\fontsize{15}{17}\usefont{T1}{pbk}{bx}{sc}
+				\universidade\\\instituto
+			\end{minipage}};
+	
+		% Título da tese/dissertação
+		\node [yshift=+6cm] at (current page.center) {%
+			\begin{minipage}{\textwidth}
+				\centering\fontsize{20}{25}\usefont{T1}{pbk}{bx}{n}
+				\titulo
+			\end{minipage}
+		};		
+		
+		% Autor da tese/dissertação
+		\node [yshift=+1cm] at (current page.center) {%
+			\begin{minipage}{\textwidth}
+				\centering\fontsize{15}{17}\usefont{T1}{pbk}{bx}{n}
+				O autor da tese/dissertação
+			\end{minipage}
+		};		
+		
+		% Orientador e banca examinadora
+		\node [yshift=-4cm] at (current page.center) {%
+			\begin{minipage}{\textwidth}
+				\usefont{T1}{pbk}{m}{n}
+				\textbf{Orientador:}\\
+				\orientador\\[\baselineskip]
+				\textbf{Banca examinadora:}\\
+				Prof. Dr. Fulano de tal (USP)\\
+				Prof\rlap.\textordfeminine Dr\rlap.\textordfeminine Sicrana de tal (USP)\\
+				Prof. Dr. Beltrano de tal (USP) --- Presidente\\
+				Prof\rlap.\textordfeminine Dr\rlap.\textordfeminine Beltrana de tal (USP)\\
+				Prof\rlap.\textordfeminine Dr\rlap.\textordfeminine Fulana de tal (USP)
+			\end{minipage}
+		};
+		
+		% Descrição padronizada
+		\node [yshift=-8cm,xshift=4cm] at (current page.center) {%
+			\begin{minipage}{6cm}
+				\rule[0ex]{\textwidth}{0.1pt}\par
+				Tese de doutorado apresentada ao \instituto\ para a
+				obtenção do título de Doutor em ciências.\par
+				\rule[1ex]{\textwidth}{0.1pt}
+			\end{minipage}};
+				
+		% Local e data (rodapé)
+		\node [yshift=+2cm] at (current page.south) {%
+			\begin{minipage}{\textwidth}
+				\centering
+				\usefont{T1}{pbk}{m}{n}
+				\cidade\\\data
+			\end{minipage}
+		};
+				
+	\end{tikzpicture}
+\end{titlepage}
+%-------------------------------------------------------------------------------
+% FICHA CATALOGRÁFICA
+%-------------------------------------------------------------------------------
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+	FICHA CATALOGRÁFICA\\
+	Preparada pelo Serviço de Biblioteca e Informação\\
+	do Instituto de Física da Universidade de São Paulo\par
+	
+	\medskip
+	
+	\fbox{\begin{minipage}{0.7\textwidth}
+		\sloppy
+		\setlength{\parindent}{\indentamount}
+		\setlength{\parskip}{0.5\baselineskip}
+		\nome\par
+		\titulo\ --- \cidade, \data.\par
+		\tipo\ --- \universidade.\par
+		\instituto\ --- \departamento.\par
+		\textbf{Orientador:} \orientador\par
+		\textbf{Área de concentração:} \area\par
+		\textbf{Unitermos:} \unitermos\par
+		\medskip
+		\noindent\sbi
+	\end{minipage}}
+\end{center}
